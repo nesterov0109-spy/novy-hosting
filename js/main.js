@@ -1,99 +1,52 @@
-/**
- * Новый Хостинг — Main JS
- * Header scroll, mobile menu, fade-in animations, FAQ accordion
- */
+// Новый Хостинг — Main
+(function() {
+  'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {
-
-  // ===================== HEADER SCROLL =====================
+  // HEADER SCROLL
   const header = document.getElementById('header');
-  let lastScroll = 0;
-
+  let ticking = false;
   window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    if (currentScroll > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-    lastScroll = currentScroll;
-  });
-
-  // Trigger on load
-  if (window.pageYOffset > 50) {
-    header.classList.add('scrolled');
-  }
-
-  // ===================== MOBILE MENU =====================
-  const menuToggle = document.getElementById('menuToggle');
-  const nav = document.getElementById('nav');
-
-  if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
-      menuToggle.classList.toggle('open');
-    });
-
-    // Close menu on link click
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        menuToggle.classList.remove('open');
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        header.classList.toggle('scrolled', window.scrollY > 60);
+        ticking = false;
       });
-    });
+      ticking = true;
+    }
+  });
+  if (window.scrollY > 60) header.classList.add('scrolled');
+
+  // MOBILE MENU
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('nav');
+  if (toggle) {
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
   }
 
-  // ===================== FADE-IN ANIMATIONS =====================
-  const fadeElements = document.querySelectorAll('.fade-in');
+  // SCROLL REVEAL (Intersection Observer)
+  const revealEls = document.querySelectorAll('.reveal, .reveal-l, .reveal-s');
+  if (revealEls.length) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => obs.observe(el));
+  }
 
-  const observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  fadeElements.forEach(el => observer.observe(el));
-
-  // ===================== FAQ ACCORDION =====================
-  const faqItems = document.querySelectorAll('.faq-item');
-
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    if (question) {
-      question.addEventListener('click', () => {
-        // Close other open items
-        faqItems.forEach(other => {
-          if (other !== item && other.classList.contains('open')) {
-            other.classList.remove('open');
-          }
-        });
+  // FAQ ACCORDION
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    if (q) {
+      q.addEventListener('click', () => {
+        document.querySelectorAll('.faq-item.open').forEach(o => { if (o !== item) o.classList.remove('open'); });
         item.classList.toggle('open');
       });
     }
   });
 
-  // ===================== SMOOTH SCROLL =====================
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      const target = document.querySelector(targetId);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
-
-});
+})();

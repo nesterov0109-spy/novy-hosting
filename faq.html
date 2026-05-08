@@ -3,29 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ответы на частые вопросы о хостинге ASIC-майнеров от компании Новый Хостинг. Документы, доставка, выплаты, страхование, uptime, мониторинг, ремонт." />
-  <meta name="keywords" content="FAQ, частые вопросы, ASIC хостинг, размещение ASIC, Новый Хостинг" />
-  <title>Частые вопросы | Новый Хостинг</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23F59E0B'/><text x='50%25' y='55%25' text-anchor='middle' font-family='system-ui' font-weight='bold' font-size='18' fill='%23020D13'>Н</text></svg>" />
+  <meta name="description" content="Часто задаваемые вопросы о хостинге ASIC-майнеров. Документы, доставка, выплаты, страхование, uptime, мониторинг, ремонт и юридические лица." />
+  <title>FAQ — Новый Хостинг</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23F5A623'/><text x='50%25' y='55%25' text-anchor='middle' font-family='system-ui' font-weight='bold' font-size='18' fill='%230B0D0E'>Н</text></svg>" />
 </head>
 <body>
 
-<!-- ==================== HEADER ==================== -->
+<!-- HEADER -->
 <header class="header" id="header">
   <div class="container">
-    <a href="index.html" class="header-logo">
-      <div class="logo-icon">Н</div>
+    <a href="index.html" class="logo">
+      <span class="logo-mark">Н</span>
       Новый Хостинг
     </a>
-    <nav class="header-nav" id="nav">
+    <nav class="nav" id="nav">
       <a href="index.html">Главная</a>
       <a href="services.html">Услуги</a>
       <a href="equipment.html">Оборудование</a>
       <a href="about.html">О нас</a>
       <a href="faq.html" class="active">FAQ</a>
-      <a href="contacts.html">Контакты</a>
-      <a href="contacts.html" class="header-cta">Связаться</a>
+      <a href="contacts.html" class="nav-cta">Связаться</a>
     </nav>
     <button class="menu-toggle" id="menuToggle" aria-label="Меню">
       <span></span><span></span><span></span>
@@ -33,109 +31,95 @@
   </div>
 </header>
 
-<!-- ==================== PAGE HERO ==================== -->
+<!-- PAGE HERO -->
 <section class="page-hero">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label">FAQ</div>
-      <h1 class="section-title">Частые вопросы</h1>
-      <p class="section-subtitle">
-        Ответы на самые популярные вопросы о размещении и обслуживании ASIC-оборудования.
-      </p>
-    </div>
+    <h1>Частые вопросы</h1>
   </div>
 </section>
 
-<!-- ==================== FAQ ==================== -->
+<!-- FAQ -->
 <section class="section section-dark">
   <div class="container">
     <div class="faq-list">
 
-      <!-- Вопрос 1 -->
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-q">
           Какие документы нужны для размещения?
-          <span class="faq-icon">+</span>
+          <span class="plus">+</span>
         </button>
-        <div class="faq-answer">
-          <p>Для физических лиц достаточно паспорта и ИНН. Юридическим лицам потребуются паспорт, ИНН и ОГРН. После проверки документов с вами заключается договор публичной оферты, в котором подробно описаны условия размещения, обслуживания, тарифы и ответственность сторон. Все документы можно подать онлайн — мы принимаем сканы и фотографии через личный кабинет или по электронной почте.</p>
+        <div class="faq-a">
+          <p>Для заключения договора достаточно паспорта физического лица или учредительных документов юридического лица. Дополнительно потребуется подтверждение права собственности на оборудование (договор купли-продажи или товарная накладная). Все документы можно направить в электронном виде — оригиналы подписываются при встрече или курьерской доставкой.</p>
         </div>
       </div>
 
-      <!-- Вопрос 2 -->
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-q">
           Как происходит доставка оборудования?
-          <span class="faq-icon">+</span>
+          <span class="plus">+</span>
         </button>
-        <div class="faq-answer">
-          <p>Вы можете отправить ASIC в наш дата-центр любой транспортной компанией по вашему выбору или привезти оборудование лично после согласования времени визита. Мы рекомендуем использовать курьерские службы с объявленной ценностью и страховкой груза. После поступления оборудования мы проводим входное тестирование: проверяем работоспособность, хэшрейт, температурные показатели — и в течение 24 часов запускаем ваш ASIC в работу.</p>
+        <div class="faq-a">
+          <p>Вы можете доставить оборудование самостоятельно либо воспользоваться нашей транспортной службой с полным страхованием груза. После прибытия на площадку оборудование проходит входной тест: проверка хэшрейта, температур и энергопотребления. В течение 24 часов после подтверждения работоспособности оборудование ставится на майнинг.</p>
         </div>
       </div>
 
-      <!-- Вопрос 3 -->
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-q">
           Как часто производятся выплаты?
-          <span class="faq-icon">+</span>
+          <span class="plus">+</span>
         </button>
-        <div class="faq-answer">
-          <p>Выплаты производятся ежедневно на указанный вами криптовалютный кошелёк. Начисление происходит автоматически после получения вознаграждения пулом. В личном кабинете доступна полная статистика по каждому устройству: начисления за день, неделю и месяц, а также история всех транзакций. Комиссия за вывод не взимается — вы получаете ровно ту сумму, которую заработало ваше оборудование за вычетом стоимости электроэнергии.</p>
+        <div class="faq-a">
+          <p>Выплаты осуществляются ежедневно на указанный вами кошелёк в автоматическом режиме. Система списывает только стоимость электроэнергии и обслуживания, остаток переводится полностью. Минимальная сумма к выплате не ограничена — вы получаете доход даже с одного ASIC-майнера.</p>
         </div>
       </div>
 
-      <!-- Вопрос 4 -->
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-q">
           Есть ли страхование оборудования?
-          <span class="faq-icon">+</span>
+          <span class="plus">+</span>
         </button>
-        <div class="faq-answer">
-          <p>Да, все размещённое оборудование застраховано от технических рисков, пожаров и аварийных ситуаций на сумму, соответствующую рыночной стоимости каждого устройства. Страхование включено в базовый тариф «Стандарт» — вам не нужно оформлять дополнительные полисы. По запросу мы можем предоставить копию страхового полиса и детали страхового покрытия. При наступлении страхового случая мы полностью сопровождаем процесс получения возмещения.</p>
+        <div class="faq-a">
+          <p>Да, все размещённое оборудование застраховано от рисков пожара, затопления, кражи и повреждений при транспортировке. Страхование включено в базовый тариф без дополнительной платы. При наступлении страхового случая мы сопровождаем клиента на всех этапах получения выплаты.</p>
         </div>
       </div>
 
-      <!-- Вопрос 5 -->
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-q">
           Какой uptime вы гарантируете?
-          <span class="faq-icon">+</span>
+          <span class="plus">+</span>
         </button>
-        <div class="faq-answer">
-          <p>Мы гарантируем uptime оборудования на уровне 99,8 % в соответствии с условиями договора. Этот показатель обеспечивается за счёт бесперебойного электропитания (ИБП и дизель-генераторы), резервирования каналов связи, автоматического контроля микроклимата и круглосуточного присутствия инженеров на площадке. Простои возможны только при проведении плановых профилактических работ, о которых мы предупреждаем минимум за 48 часов, или в случае форс-мажорных обстоятельств.</p>
+        <div class="faq-a">
+          <p>Мы гарантируем uptime 99.8% в соответствии с договором. На каждой площадке установлены резервные источники бесперебойного питания и дизель-генераторы, которые включаются автоматически при сбоях в сети. Мониторинг напряжения и частоты тока ведётся круглосуточно, отклонения фиксируются и устраняются в течение нескольких минут.</p>
         </div>
       </div>
 
-      <!-- Вопрос 6 -->
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-q">
           Можно ли удалённо мониторить оборудование?
-          <span class="faq-icon">+</span>
+          <span class="plus">+</span>
         </button>
-        <div class="faq-answer">
-          <p>Да, каждый клиент получает доступ к личному кабинету с информацией в реальном времени по каждому устройству: текущий хэшрейт, температура чипов, скорость вращения вентиляторов, потребляемая мощность, доходность и статус подключения к пулу. Также доступны графики за любой период и push-уведомления о любых отклонениях показателей. Личный кабинет работает через веб-интерфейс и адаптирован для мобильных устройств.</p>
+        <div class="faq-a">
+          <p>Да, каждый клиент получает доступ к личному кабинету с данными по каждому устройству: текущий хэшрейт, температура, напряжение, энергопотребление и доходность. Доступ осуществляется через веб-интерфейс и мобильное приложение. При отклонении параметров от нормы система отправляет push-уведомления.</p>
         </div>
       </div>
 
-      <!-- Вопрос 7 -->
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        <button class="faq-q">
           Какие тарифы на ремонт?
-          <span class="faq-icon">+</span>
+          <span class="plus">+</span>
         </button>
-        <div class="faq-answer">
-          <p>Стоимость ремонта зависит от сложности неисправности и модели оборудования. Базовая диагностика проводится бесплатно для клиентов на тарифах «Оптима» и «Корпоративный». Типовые работы, такие как замена вентиляторов или термопасты, стоят от 1 500 рублей. Ремонт хэш-плат и замена чипов рассчитывается индивидуально после диагностики. На все выполненные работы предоставляется гарантия от 1 до 12 месяцев в зависимости от типа ремонта.</p>
+        <div class="faq-a">
+          <p>Стоимость ремонта зависит от типа неисправности и сложности работ. Диагностика бесплатна для клиентов на тарифе «Оптима» и выше. Базовая диагностика для остальных тарифов — 1 500 рублей. Замена чипов, восстановление хэшбордов и пайка BGA выполняются в собственном сервисном центре с гарантией до 12 месяцев.</p>
         </div>
       </div>
 
-      <!-- Вопрос 8 -->
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-          Работаете ли вы с юридическими лицами?
-          <span class="faq-icon">+</span>
+        <button class="faq-q">
+          Работаете ли с юридическими лицами?
+          <span class="plus">+</span>
         </button>
-        <div class="faq-answer">
-          <p>Да, мы работаем как с физическими, так и с юридическими лицами. Для компаний мы предлагаем полный пакет закрывающих документов: договор, счета, акты выполненных работ, счёт-фактуры. Возможна работа с НДС и без НДС. Для корпоративных клиентов от 500 ASIC действуют индивидуальные условия по тарифам на электроэнергию, выделенная площадь и персональный менеджер. Мы также помогаем с бухгалтерским сопровождением майнинговой деятельности.</p>
+        <div class="faq-a">
+          <p>Да, мы работаем как с физическими, так и с юридическими лицами по безналичному расчёту с НДС. Для юрлиц предусмотрен корпоративный тариф с выделенной площадью, льготной ставкой на электроэнергию и персональным менеджером. Заключается отдельный договор с закрывающими документами по итогам каждого отчётного периода.</p>
         </div>
       </div>
 
@@ -143,67 +127,58 @@
   </div>
 </section>
 
-<!-- ==================== CTA ==================== -->
-<section class="section text-center" style="background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary));">
+<!-- CTA -->
+<section class="section section-deep tac">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label">Остались вопросы</div>
-      <h2 class="section-title">Свяжитесь с нами</h2>
-      <p class="section-subtitle" style="margin-bottom: var(--space-xl);">
-        Если вы не нашли ответ на свой вопрос — напишите нам, и мы ответим в течение часа.
-      </p>
-      <a href="contacts.html" class="btn btn-primary btn-lg">Написать нам</a>
-    </div>
+    <span class="section-label">Остались вопросы?</span>
+    <h2 class="section-title" style="max-width:600px;margin:0 auto var(--space-lg)">Свяжитесь с нами</h2>
+    <p class="section-subtitle" style="margin:0 auto var(--space-xl)">Ответим на любые вопросы и поможем подобрать оптимальный тариф.</p>
+    <a href="contacts.html" class="btn btn-gold btn-lg">Связаться</a>
   </div>
 </section>
 
-<!-- ==================== FOOTER ==================== -->
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div>
         <div class="footer-brand">Новый Хостинг</div>
-        <p class="footer-desc">
-          Профессиональный хостинг ASIC-оборудования в России. 
-          Собственные площадки, низкие тарифы и полное сопровождение.
-        </p>
+        <p class="footer-desc">Профессиональный хостинг ASIC-оборудования в России. Собственные площадки, низкие тарифы, полное сопровождение.</p>
       </div>
       <div>
-        <h4 class="footer-heading">Услуги</h4>
-        <div class="footer-links">
-          <a href="services.html">Размещение ASIC</a>
-          <a href="services.html">Ремонт и обслуживание</a>
-          <a href="equipment.html">Продажа оборудования</a>
-          <a href="faq.html">Частые вопросы</a>
+        <div class="footer-h">Услуги</div>
+        <div class="footer-l">
+          <a href="services.html">Размещение</a>
+          <a href="services.html">Ремонт</a>
+          <a href="equipment.html">Оборудование</a>
+          <a href="faq.html">FAQ</a>
         </div>
       </div>
       <div>
-        <h4 class="footer-heading">Компания</h4>
-        <div class="footer-links">
+        <div class="footer-h">Компания</div>
+        <div class="footer-l">
           <a href="about.html">О нас</a>
           <a href="contacts.html">Контакты</a>
           <a href="about.html">Партнёрам</a>
-          <a href="about.html">Вакансии</a>
         </div>
       </div>
       <div>
-        <h4 class="footer-heading">Контакты</h4>
-        <div class="footer-links">
+        <div class="footer-h">Контакты</div>
+        <div class="footer-l">
           <a href="contacts.html">Москва, ул. Электрозаводская, 24</a>
           <a href="contacts.html">+7 (495) 000-00-00</a>
           <a href="contacts.html">info@novy-hosting.ru</a>
-          <a href="contacts.html">Telegram: @novy_hosting</a>
+          <a href="contacts.html">@novy_hosting</a>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Новый Хостинг. Все права защищены.</span>
-      <span>Работаем в соответствии с законодательством РФ</span>
+    <div class="footer-b">
+      <span>&copy; 2026 Новый Хостинг. Все права защищены.</span>
+      <span>Работаем по законодательству РФ</span>
     </div>
   </div>
 </footer>
 
-<!-- ==================== JS ==================== -->
 <script src="js/main.js"></script>
 </body>
 </html>
