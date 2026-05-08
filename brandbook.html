@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Брендбук — Новый Хостинг</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --deep: #0B0D0E;
+      --body: #0F1214;
+      --section: #13171A;
+      --card: #181D21;
+      --card-hover: #1E2428;
+      --elevated: #22292E;
+      --text: #ECEDEE;
+      --text-sec: rgba(236,237,238,.65);
+      --text-ter: rgba(236,237,238,.40);
+      --text-muted: rgba(236,237,238,.20);
+      --gold: #F5A623;
+      --gold-light: #FFB840;
+      --gold-dark: #D48B0A;
+      --gold-dim: rgba(245,166,35,.08);
+      --green: #34D399;
+      --red: #F87171;
+      --font: 'Space Grotesk', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:var(--font);background:var(--body);color:var(--text);line-height:1.6;overflow-x:hidden}
+    
+    /* SIDEBAR */
+    .sidebar{
+      position:fixed;top:0;left:0;bottom:0;width:260px;
+      background:var(--deep);border-right:1px solid rgba(236,237,238,.05);
+      padding:var(--space-lg);overflow-y:auto;z-index:100;
+    }
+    .sidebar-logo{font-size:1.1rem;font-weight:600;margin-bottom:var(--space-2xl);letter-spacing:-.3px}
+    .sidebar-logo span{color:var(--gold)}
+    .sidebar-nav{display:flex;flex-direction:column;gap:4px}
+    .sidebar-nav a{
+      color:var(--text-ter);font-size:.8rem;font-weight:500;padding:8px 12px;
+      border-radius:6px;transition:all .2s;text-decoration:none;
+    }
+    .sidebar-nav a:hover,.sidebar-nav a.active{color:var(--text);background:rgba(236,237,238,.04)}
+    
+    /* MAIN */
+    .main{margin-left:260px;padding:0}
+    .hero-section{
+      min-height:60vh;display:flex;align-items:center;
+      background:linear-gradient(135deg,var(--deep),var(--section));
+      padding:80px 60px;position:relative;overflow:hidden;
+    }
+    .hero-section::before{
+      content:'';position:absolute;top:-30%;right:-10%;
+      width:500px;height:500px;
+      background:radial-gradient(circle,rgba(245,166,35,.06),transparent 60%);
+      border-radius:50%;
+    }
+    .hero-content{position:relative;z-index:1;max-width:720px}
+    .hero-content .label{font-family:var(--mono);font-size:.6rem;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+    .hero-content h1{font-size:3.5rem;font-weight:600;letter-spacing:-2px;line-height:1.05;margin-bottom:12px}
+    .hero-content h1 .hl{background:linear-gradient(135deg,var(--gold-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-content p{font-size:.95rem;color:var(--text-sec);line-height:1.7;max-width:500px}
+    
+    .section{padding:80px 60px}
+    .section-dark{background:var(--section)}
+    .section-deep{background:var(--deep)}
+    .section-label{font-family:var(--mono);font-size:.6rem;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+    .section-title{font-size:2rem;font-weight:600;letter-spacing:-1px;margin-bottom:8px}
+    .section-desc{font-size:.9rem;color:var(--text-sec);max-width:600px;margin-bottom:40px}
+    
+    /* COLOR SWATCHES */
+    .colors-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:16px}
+    .swatch{border-radius:10px;overflow:hidden;border:1px solid rgba(236,237,238,.06)}
+    .swatch-preview{height:80px;position:relative}
+    .swatch-info{padding:10px;background:var(--card)}
+    .swatch-name{font-size:.75rem;font-weight:600;margin-bottom:2px}
+    .swatch-hex{font-family:var(--mono);font-size:.65rem;color:var(--text-ter)}
+
+    /* TYPOGRAPHY SCALE */
+    .type-grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .type-item{border-bottom:1px solid rgba(236,237,238,.04);padding:16px 0}
+    .type-item:last-child{border-bottom:none}
+    .type-tag{font-family:var(--mono);font-size:.6rem;color:var(--text-ter);margin-bottom:4px;text-transform:uppercase;letter-spacing:1.5px}
+    .type-sample{color:var(--text);margin:0}
+    .type-details{font-size:.7rem;color:var(--text-ter);margin-top:4px;font-family:var(--mono)}
+
+    /* COMPONENT SHOWCASE */
+    .component-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .component-card{
+      background:var(--card);border:1px solid rgba(236,237,238,.06);
+      border-radius:10px;padding:24px;
+    }
+    .component-card h4{font-size:.8rem;font-weight:600;margin-bottom:16px;color:var(--text-sec)}
+    .btn-show{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:9999px;font-family:var(--font);font-size:.85rem;font-weight:600;cursor:pointer;border:none;text-decoration:none;line-height:1;letter-spacing:.2px;transition:all .3s}
+    .btn-gold{background:var(--gold);color:var(--deep)}
+    .btn-ghost{background:transparent;color:var(--text);border:1px solid rgba(236,237,238,.12)}
+    .card-demo{
+      background:var(--card);border:1px solid rgba(236,237,238,.06);
+      border-radius:10px;padding:20px;display:inline-block;min-width:200px;
+    }
+    .card-demo .demo-icon{width:36px;height:36px;background:var(--gold-dim);border-radius:6px;margin-bottom:12px}
+    .card-demo .demo-title{font-weight:600;font-size:.85rem;margin-bottom:4px}
+    .card-demo .demo-text{font-size:.75rem;color:var(--text-ter)}
+    .tag-demo{display:inline-flex;align-items:center;gap:8px;background:var(--gold-dim);border:1px solid rgba(245,166,35,.12);padding:6px 16px;border-radius:9999px;font-size:.75rem;color:var(--gold)}
+    
+    /* SPACING */
+    .space-grid{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end}
+    .space-block{background:var(--gold-dim);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold);font-family:var(--mono)}
+    
+    /* GUIDELINE CARD */
+    .guideline{background:var(--card);border:1px solid rgba(236,237,238,.06);border-radius:10px;padding:20px;margin-bottom:12px}
+    .guideline h4{font-size:.8rem;font-weight:600;margin-bottom:6px}
+    .guideline p{font-size:.8rem;color:var(--text-sec);line-height:1.6}
+    .guideline .do{color:var(--green)}
+    .guideline .dont{color:var(--red)}
+    
+    /* STATS */
+    .brand-stats{display:flex;gap:40px;flex-wrap:wrap}
+    .brand-stat{font-family:var(--mono);font-size:1.5rem;font-weight:600;color:var(--gold);letter-spacing:-1px}
+    
+    .space{margin:16px 0}
+    
+    @media(max-width:768px){
+      .sidebar{display:none}
+      .main{margin-left:0}
+      .hero-section,.section{padding:40px 24px}
+      .hero-content h1{font-size:2rem}
+      .component-grid{grid-template-columns:1fr}
+      .colors-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}
+    }
+  </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="sidebar-logo">✦ Новый <span>Хостинг</span></div>
+  <nav class="sidebar-nav">
+    <a href="#overview" class="active">Обзор</a>
+    <a href="#colors">Цвета</a>
+    <a href="#typography">Типографика</a>
+    <a href="#spacing">Отступы</a>
+    <a href="#components">Компоненты</a>
+    <a href="#guidelines">Гайдлайны</a>
+    <a href="#tone">Тон коммуникации</a>
+  </nav>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- HERO -->
+  <section class="hero-section" id="overview">
+    <div class="hero-content">
+      <div class="label">Brandbook v1.0</div>
+      <h1>Новый <span class="hl">Хостинг</span></h1>
+      <p>Промышленная эстетика майнинга. Тёмный индустриальный стиль с золотым акцентом энергии. Бренд для профессионального хостинга ASIC-оборудования в России.</p>
+      <div class="space"></div>
+      <div class="brand-stats">
+        <div class="brand-stat">#0B0D0E</div>
+        <div class="brand-stat">#F5A623</div>
+        <div class="brand-stat">Space Grotesk</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND ESSENCE -->
+  <section class="section section-dark" id="essence">
+    <div class="section-label">Суть бренда</div>
+    <div class="section-title">ДНК бренда</div>
+    <div class="guideline" style="max-width:700px">
+      <p style="font-size:.9rem;color:var(--text-sec);line-height:1.7">
+        <strong style="color:var(--text)">Архетип:</strong> Созидатель + Правитель. Мы строим инфраструктуру для новой экономики.<br><br>
+        <strong style="color:var(--text)">Миссия:</strong> Обеспечить майнерам максимальную доходность через надёжную инфраструктуру.<br><br>
+        <strong style="color:var(--text)">Тон:</strong> Уверенный, технологичный, без пафоса. Мы знаем своё дело — цифры говорят за нас.<br><br>
+        <strong style="color:var(--text)">Ключевые слова:</strong> энергия, мощность, надёжность, прозрачность, доходность, инфраструктура
+      </p>
+    </div>
+  </section>
+
+  <!-- COLORS -->
+  <section class="section" id="colors">
+    <div class="section-label">01 — Цвета</div>
+    <div class="section-title">Палитра</div>
+    <div class="section-desc">Тёмная индустриальная палитра с золотым акцентом. Никаких градиентов, никакого лишнего цвета.</div>
+    
+    <h3 style="font-size:.85rem;font-weight:600;margin-bottom:12px;color:var(--text-sec)">Основные</h3>
+    <div class="colors-grid" style="margin-bottom:32px">
+      <div class="swatch">
+        <div class="swatch-preview" style="background:#0B0D0E"></div>
+        <div class="swatch-info"><div class="swatch-name">Deep Black</div><div class="swatch-hex">#0B0D0E</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-preview" style="background:#0F1214"></div>
+        <div class="swatch-info"><div class="swatch-name">Body BG</div><div class="swatch-hex">#0F1214</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-preview" style="background:#13171A"></div>
+        <div class="swatch-info"><div class="swatch-name">Section BG</div><div class="swatch-hex">#13171A</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-preview" style="background:#181D21"></div>
+        <div class="swatch-info"><div class="swatch-name">Card BG</div><div class="swatch-hex">#181D21</div></div>
+      </div>
+    </div>
+
+    <h3 style="font-size:.85rem;font-weight:600;margin-bottom:12px;color:var(--text-sec)">Акцент</h3>
+    <div class="colors-grid" style="margin-bottom:32px">
+      <div class="swatch">
+        <div class="swatch-preview" style="background:#F5A623;box-shadow:0 0 20px rgba(245,166,35,.3)"></div>
+        <div class="swatch-info"><div class="swatch-name">Gold</div><div class="swatch-hex">#F5A623</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-preview" style="background:#FFB840"></div>
+        <div class="swatch-info"><div class="swatch-name">Gold Light</div><div class="swatch-hex">#FFB840</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-preview" style="background:#D48B0A"></div>
+        <div class="swatch-info"><div class="swatch-name">Gold Dark</div><div class="swatch-hex">#D48B0A</div></div>
+      </div>
+    </div>
+
+    <h3 style="font-size:.85rem;font-weight:600;margin-bottom:12px;color:var(--text-sec)">Текст</h3>
+    <div class="colors-grid" style="margin-bottom:32px">
+      <div class="swatch">
+        <div class="swatch-preview" style="background:#ECEDEE"></div>
+        <div class="swatch-info"><div class="swatch-name">Text Primary</div><div class="swatch-hex">#ECEDEE</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-preview" style="background:rgba(236,237,238,.65)"></div>
+        <div class="swatch-info"><div class="swatch-name">Text Secondary</div><div class="swatch-hex">65% white</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-preview" style="background:rgba(236,237,238,.40)"></div>
+        <div class="swatch-info"><div class="swatch-name">Text Tertiary</div><div class="swatch-hex">40% white</div></div>
+      </div>
+    </div>
+
+    <h3 style="font-size:.85rem;font-weight:600;margin-bottom:12px;color:var(--text-sec)">Статусные</h3>
+    <div class="colors-grid">
+      <div class="swatch">
+        <div class="swatch-preview" style="background:#34D399"></div>
+        <div class="swatch-info"><div class="swatch-name">Success</div><div class="swatch-hex">#34D399</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-preview" style="background:#F87171"></div>
+        <div class="swatch-info"><div class="swatch-name">Danger</div><div class="swatch-hex">#F87171</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-preview" style="background:#60A5FA"></div>
+        <div class="swatch-info"><div class="swatch-name">Info</div><div class="swatch-hex">#60A5FA</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section class="section section-dark" id="typography">
+    <div class="section-label">02 — Типографика</div>
+    <div class="section-title">Шрифты</div>
+    <div class="section-desc">Space Grotesk — геометрический гротеск с характером. JetBrains Mono — для технических данных.</div>
+
+    <div class="guideline" style="margin-bottom:24px">
+      <p><strong style="color:var(--text)">Основной шрифт:</strong> Space Grotesk (Google Fonts) — заголовки, body, UI</p>
+      <p style="margin-top:4px"><strong style="color:var(--text)">Моноширинный:</strong> JetBrains Mono — техданные, цены, метрики, код</p>
+    </div>
+
+    <div class="type-grid">
+      <div class="type-item">
+        <div class="type-tag">Display XL · Space Grotesk 600</div>
+        <div class="type-sample" style="font-size:3.5rem;font-weight:600;letter-spacing:-.04em;line-height:1">Хэшрейт растёт</div>
+        <div class="type-details">3.5rem / weight 600 / line-height 1 / letter-spacing -0.04em / <span style="color:var(--gold)">только hero</span></div>
+      </div>
+      <div class="type-item">
+        <div class="type-tag">Display · Space Grotesk 600</div>
+        <div class="type-sample" style="font-size:2.25rem;font-weight:600;letter-spacing:-.025em;line-height:1.1">Почему выбирают нас</div>
+        <div class="type-details">2.25rem / weight 600 / line-height 1.1 / section заголовки</div>
+      </div>
+      <div class="type-item">
+        <div class="type-tag">H3 · Space Grotesk 600</div>
+        <div class="type-sample" style="font-size:1.125rem;font-weight:600;letter-spacing:-.01em">Низкие тарифы на энергию</div>
+        <div class="type-details">1.125rem / weight 600 / карточки, подзаголовки</div>
+      </div>
+      <div class="type-item">
+        <div class="type-tag">Body · Space Grotesk 400</div>
+        <div class="type-sample" style="font-size:.9375rem;font-weight:400;color:var(--text-sec)">Прямые договоры с энергосбытовыми компаниями. Фиксированная ставка без наценок.</div>
+        <div class="type-details">0.9375rem / weight 400 / line-height 1.7 / основной текст</div>
+      </div>
+      <div class="type-item">
+        <div class="type-tag">Label · JetBrains Mono 600</div>
+        <div class="type-sample" style="font-family:var(--mono);font-size:.65rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)">Преимущества</div>
+        <div class="type-details">0.65rem / uppercase / letter-spacing 0.15em / секционные лейблы</div>
+      </div>
+      <div class="type-item">
+        <div class="type-tag">Mono Data · JetBrains Mono 500</div>
+        <div class="type-sample" style="font-family:var(--mono);font-size:.75rem;color:var(--gold)">200 TH/s · 99.8% uptime · 4.5 ₽/кВт·ч</div>
+        <div class="type-details">0.75rem / техданные, хэшрейты, цены</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPACING -->
+  <section class="section" id="spacing">
+    <div class="section-label">03 — Отступы</div>
+    <div class="section-title">Система интервалов</div>
+    <div class="section-desc">База 8px. Все отступы кратны базовой сетке.</div>
+    <div class="space-grid">
+      <div class="space-block" style="width:4px;height:4px">4px</div>
+      <div class="space-block" style="width:8px;height:8px">8px</div>
+      <div class="space-block" style="width:16px;height:16px">16px</div>
+      <div class="space-block" style="width:24px;height:24px">24px</div>
+      <div class="space-block" style="width:32px;height:32px">32px</div>
+      <div class="space-block" style="width:48px;height:48px">48px</div>
+      <div class="space-block" style="width:64px;height:64px">64px</div>
+      <div class="space-block" style="width:80px;height:80px">80px</div>
+    </div>
+    <div class="guideline" style="margin-top:24px">
+      <p style="font-size:.8rem;color:var(--text-sec)">Сетка: 4 / 8 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 px. <strong style="color:var(--text)">Максимальная ширина контента:</strong> 1200px. <strong style="color:var(--text)">Высота шапки:</strong> 68px.</p>
+    </div>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section class="section section-dark" id="components">
+    <div class="section-label">04 — Компоненты</div>
+    <div class="section-title">UI Кит</div>
+    <div class="section-desc">Основные элементы интерфейса. Акцент — минимализм и функциональность.</div>
+
+    <div class="component-grid">
+      <div class="component-card">
+        <h4>Кнопка Primary (Gold)</h4>
+        <button class="btn-show btn-gold">Выбрать тариф</button>
+        <div class="type-details" style="margin-top:8px">bg #F5A623 / radius 9999px / padding 12px 28px</div>
+      </div>
+      <div class="component-card">
+        <h4>Кнопка Ghost</h4>
+        <button class="btn-show btn-ghost">Подробнее</button>
+        <div class="type-details" style="margin-top:8px">transparent / border 1px 12% white / radius 9999px</div>
+      </div>
+      <div class="component-card">
+        <h4>Карточка</h4>
+        <div class="card-demo">
+          <div class="demo-icon"></div>
+          <div class="demo-title">Мониторинг 24/7</div>
+          <div class="demo-text">Собственная система контроля</div>
+        </div>
+        <div class="type-details" style="margin-top:8px">bg #181D21 / border 1px 6% white / radius 10px</div>
+      </div>
+      <div class="component-card">
+        <h4>Тэг / Badge</h4>
+        <div class="tag-demo">
+          <span style="width:5px;height:5px;background:#F5A623;border-radius:50%;display:inline-block"></span>
+          Работаем с 2021
+        </div>
+        <div class="type-details" style="margin-top:8px">bg gold 8% / border gold 12% / radius 9999px</div>
+      </div>
+      <div class="component-card">
+        <h4>Поле ввода</h4>
+        <div style="padding:10px 14px;background:#0B0D0E;border:1px solid rgba(236,237,238,.08);border-radius:6px;color:var(--text-ter);font-size:.8rem">Ваше имя</div>
+        <div class="type-details" style="margin-top:8px">bg #0B0D0E / border 8% / radius 6px / focus: gold border</div>
+      </div>
+      <div class="component-card">
+        <h4>Навигация</h4>
+        <div style="display:flex;gap:16px;padding:10px 0;border-bottom:1px solid rgba(236,237,238,.05)">
+          <div style="color:var(--text);font-size:.8rem;font-weight:500">Главная</div>
+          <div style="color:var(--text-ter);font-size:.8rem;font-weight:500">Услуги</div>
+          <div style="color:var(--text-ter);font-size:.8rem;font-weight:500">FAQ</div>
+          <div style="padding:4px 14px;background:var(--gold);border-radius:9999px;color:#0B0D0E;font-size:.75rem;font-weight:600;margin-left:auto">Связаться</div>
+        </div>
+        <div class="type-details" style="margin-top:8px">header 85% black / blur 16px / nav-link: 0.8rem</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDELINES -->
+  <section class="section" id="guidelines">
+    <div class="section-label">05 — Гайдлайны</div>
+    <div class="section-title">Правила использования</div>
+    <div class="section-desc">Как НАДО и как НЕ НАДО использовать бренд.</div>
+
+    <div class="guideline">
+      <h4 class="do">✓ ДЕЛАТЬ</h4>
+      <p>Использовать золотой (#F5A623) только как акцент — кнопки, выделения, ключевые цифры<br>
+      Держать тёмный фон основным — бренд живёт в темноте<br>
+      Использовать Space Grotesk для всего текста, JetBrains Mono для техданных<br>
+      Сохранять крупные заголовки с плотным трекингом<br>
+      Карточки должны быть тёмными с тонкой обводкой<br>
+      Анимации — плавные, cubic-bezier, без линейных</p>
+    </div>
+    <div class="guideline">
+      <h4 class="dont">✗ НЕ ДЕЛАТЬ</h4>
+      <p>Не использовать emoji в интерфейсах — только SVG иконки<br>
+      Не использовать градиенты (кроме золотого свечения)<br>
+      Не использовать Inter, Roboto, Arial — только Space Grotesk<br>
+      Не делать карточки белыми или светлыми<br>
+      Не использовать стандартные бордеры — только полупрозрачные<br>
+      Не использовать стандартный скролл браузера — Lenis обязателен<br>
+      Не ставить золотой фон на большие площади — он только акцент</p>
+    </div>
+  </section>
+
+  <!-- TONE OF VOICE -->
+  <section class="section section-deep" id="tone">
+    <div class="section-label">06 — Тон коммуникации</div>
+    <div class="section-title">Голос бренда</div>
+    <div class="section-desc">Как мы говорим с клиентами.</div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+      <div class="guideline">
+        <h4>Характер</h4>
+        <p>Уверенный, но не высокомерный. Техничный, но не сухой. Мы эксперты, которые говорят на языке цифр и фактов. Без пафоса, без пустых обещаний.</p>
+      </div>
+      <div class="guideline">
+        <h4>Что не используем</h4>
+        <p>❌ «Инновационный», «прорывной», «уникальный» — пустые слова<br>
+        ❌ Восклицательные знаки в каждом предложении<br>
+        ❌ Обращения на «ты» — везде «Вы»<br>
+        ❌ Эмодзи в серьёзных коммуникациях</p>
+      </div>
+      <div class="guideline">
+        <h4>Формула текста</h4>
+        <p>Факт → Цифра → Выгода.<br>
+        «Мы снизили тариф на энергию до 3.9 ₽/кВт·ч за счёт прямых договоров. Вы платите меньше — зарабатываете больше.»</p>
+      </div>
+      <div class="guideline">
+        <h4>Пример Hero</h4>
+        <p>«Хостинг ASIC на промышленных мощностях»<br><br>
+        Не «Лучший хостинг в России» — это пустота.<br>
+            2.5 MW мощности, 99.8% uptime, 7 лет опыта — это факты.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section style="padding:40px 60px;border-top:1px solid rgba(236,237,238,.04);background:var(--deep);text-align:center">
+    <p style="font-size:.75rem;color:var(--text-muted)">Брендбук Новый Хостинг v1.0 — май 2026</p>
+    <p style="font-size:.7rem;color:var(--text-muted);margin-top:4px">DESIGN.md токены доступны в репозитории проекта</p>
+  </section>
+
+</div>
+
+</body>
+</html>
