@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Услуги и тарифы Новый Хостинг — размещение ASIC, ремонт, диагностика. Промышленные тарифы на электроэнергию." />
-  <title>Услуги и тарифы — Новый Хостинг</title>
+  <meta name="description" content="Тарифы Новый Хостинг — Экономичный и Круглосуточный режимы размещения ASIC от 3,3 ₽/кВт·ч. Гарантии, условия и преимущества." />
+  <title>Тарифы — Новый Хостинг</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23F5A623'/><text x='50%25' y='55%25' text-anchor='middle' font-family='system-ui' font-weight='bold' font-size='18' fill='%230B0D0E'>Н</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%2330C050'/><text x='50%25' y='55%25' text-anchor='middle' font-family='system-ui' font-weight='bold' font-size='18' fill='%23000812'>Н</text></svg>" />
 </head>
 <body>
 
@@ -19,11 +19,11 @@
     </a>
     <nav class="nav" id="nav">
       <a href="index.html">Главная</a>
-      <a href="services.html" class="active">Услуги</a>
+      <a href="services.html" class="active">Тарифы</a>
       <a href="equipment.html">Оборудование</a>
       <a href="about.html">О нас</a>
       <a href="faq.html">FAQ</a>
-      <a href="contacts.html" class="nav-cta">Связаться</a>
+      <a href="contacts.html" class="nav-cta">Записаться на экскурсию</a>
     </nav>
     <button class="menu-toggle" id="menuToggle" aria-label="Меню">
       <span></span><span></span><span></span>
@@ -32,130 +32,147 @@
 </header>
 
 <!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="container">
-    <h1>Услуги и тарифы</h1>
-    <p style="max-width:600px;margin:var(--space-md) auto 0">
-      Размещение ASIC-оборудования на собственных площадках, ремонт, диагностика и полное сопровождение. Прозрачные цены без скрытых платежей.
-    </p>
+<section class="page-hero" style="padding:calc(var(--header-h) + var(--space-4xl)) 0 var(--space-3xl);background:var(--bg-deep);text-align:center;position:relative;overflow:hidden">
+  <div class="container" style="position:relative;z-index:1">
+    <h1 style="font-size:3rem;font-weight:600;letter-spacing:-1.5px;line-height:1.08">Тарифы</h1>
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- PRICING / MODES -->
 <section class="section section-dark" id="pricing">
   <div class="container">
     <div class="section-header">
       <span class="section-label">Тарифы</span>
       <h2 class="section-title">Выберите свой тариф</h2>
-      <p class="section-subtitle">Фиксированная стоимость электроэнергии + обслуживание. Без скрытых комиссий и наценок.</p>
+      <p class="section-subtitle">Фиксированная стоимость электроэнергии с обслуживанием. Без скрытых комиссий и наценок.</p>
     </div>
-    <div class="pricing-grid">
-      <div class="card reveal">
-        <h3 class="card-title" style="margin-bottom:var(--space-md)">Стандарт</h3>
-        <div class="price">4.5<span> ₽/кВт·ч</span></div>
-        <div class="price-label">Базовое размещение</div>
-        <ul class="features">
-          <li>Мониторинг 24/7</li>
-          <li>Личный кабинет</li>
-          <li>Страхование оборудования</li>
-          <li>Техподдержка в чате</li>
-          <li>Ежедневные выплаты</li>
+    <div class="modes-grid">
+      <div class="mode-card featured reveal">
+        <div class="pricing-badge">Экономия до 30%</div>
+        <div class="mode-name">Экономичный</div>
+        <div class="mode-price">3,3 <span>₽/кВт·ч</span></div>
+        <div class="mode-uptime">~66% <span>— работа 10–14 ч в будни, круглосуточно в выходные</span></div>
+        <div class="mode-desc">Минимальная себестоимость добычи за счёт отключения в пиковые часы нагрузки сети.</div>
+        <ul class="mode-features">
+          <li>Автоматическое включение/выключение</li>
+          <li>Снижение затрат до 30% vs рынок</li>
+          <li>Идеально для долгосрочного холда</li>
+          <li>Доступ в личный кабинет 24/7</li>
         </ul>
-        <a href="contacts.html" class="btn btn-green" style="width:100%;justify-content:center;margin-top:var(--space-lg)">Выбрать</a>
+        <a href="contacts.html" class="btn btn-green btn-full">Подключить</a>
       </div>
-      <div class="card featured reveal">
-        <div class="pricing-badge">Популярный</div>
-        <h3 class="card-title" style="margin-bottom:var(--space-md)">Оптима</h3>
-        <div class="price">3.9<span> ₽/кВт·ч</span></div>
-        <div class="price-label">Расширенное обслуживание</div>
-        <ul class="features">
-          <li>Всё из тарифа «Стандарт»</li>
-          <li>Приоритетная поддержка</li>
-          <li>Ежемесячная профилактика</li>
-          <li>Бесплатная диагностика</li>
-          <li>Скидка на ремонт 15%</li>
-          <li>Персональный менеджер</li>
+      <div class="mode-card reveal">
+        <div class="mode-name">Круглосуточный</div>
+        <div class="mode-price">4,6 <span>₽/кВт·ч</span></div>
+        <div class="mode-uptime">~97% <span>— оборудование работает 24/7/365</span></div>
+        <div class="mode-desc">Максимальный хэшрейт и предсказуемый доход без простоев.</div>
+        <ul class="mode-features">
+          <li>Непрерывная работа 24/7/365</li>
+          <li>Стабильный предсказуемый доход</li>
+          <li>Приоритетная техподдержка</li>
+          <li>Полный доступ к инфраструктуре</li>
         </ul>
-        <a href="contacts.html" class="btn btn-green" style="width:100%;justify-content:center;margin-top:var(--space-lg)">Выбрать</a>
-      </div>
-      <div class="card reveal">
-        <h3 class="card-title" style="margin-bottom:var(--space-md)">Корпоративный</h3>
-        <div class="price">Индивид.<span></span></div>
-        <div class="price-label">От 500+ ASIC</div>
-        <ul class="features">
-          <li>Всё из тарифа «Оптима»</li>
-          <li>Выделенная площадь</li>
-          <li>Льготный тариф на энергию</li>
-          <li>Приоритетный ремонт</li>
-          <li>SCADA-мониторинг</li>
-          <li>Отдельный договор</li>
-        </ul>
-        <a href="contacts.html" class="btn btn-green" style="width:100%;justify-content:center;margin-top:var(--space-lg)">Выбрать</a>
+        <a href="contacts.html" class="btn btn-green btn-full">Подключить</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ADDITIONAL SERVICES -->
-<section class="section" id="additional">
+<!-- BENEFITS — ЧТО ВХОДИТ В ТАРИФ -->
+<section class="section" id="benefits">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Дополнительно</span>
-      <h2 class="section-title">Дополнительные услуги</h2>
-      <p class="section-subtitle">Всё, что может понадобиться для бесперебойной работы вашего оборудования.</p>
+      <span class="section-label">Преимущества</span>
+      <h2 class="section-title">Что входит в тариф</h2>
+      <p class="section-subtitle">Инфраструктура полного цикла для вашего ASIC-оборудования.</p>
     </div>
-    <div class="grid-4">
+    <div class="grid-3">
       <div class="card reveal">
         <div class="card-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-          </svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
-        <h3 class="card-title">Ремонт ASIC</h3>
-        <p class="card-text">Собственный сервисный центр с полным циклом ремонта. Замена чипов, восстановление хэшбордов, пайка BGA.</p>
+        <h3 class="card-title">Надёжная инфраструктура</h3>
+        <p class="card-text">Современная система охлаждения, резервное питание, контроль температуры и влажности 24/7.</p>
       </div>
       <div class="card reveal">
         <div class="card-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/>
-            <path d="M21 21l-4.35-4.35"/>
-          </svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
-        <h3 class="card-title">Диагностика</h3>
-        <p class="card-text">Профессиональная диагностика с отчётом по каждому устройству. Выявление неисправностей на ранней стадии.</p>
+        <h3 class="card-title">Сервисный центр</h3>
+        <p class="card-text">Собственный ремонт. Среднее время реакции — 4 часа. Ремонт за 48 часов. Запчасти для Bitmain, Whatsminer, Innosilicon.</p>
       </div>
       <div class="card reveal">
         <div class="card-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="1" y="3" width="15" height="13"/>
-            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-            <circle cx="5.5" cy="18.5" r="2.5"/>
-            <circle cx="18.5" cy="18.5" r="2.5"/>
-          </svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h3 class="card-title">Доставка</h3>
-        <p class="card-text">Организуем транспортировку вашего оборудования до площадки. Страховка на всех этапах перевозки.</p>
+        <h3 class="card-title">Легальная энергия</h3>
+        <p class="card-text">Прямые договоры с энергосбытом. Охрана 24/7, контроль доступа. Работаем в правовом поле РФ.</p>
       </div>
       <div class="card reveal">
         <div class="card-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="3"/>
-            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-          </svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <h3 class="card-title">Настройка пулов</h3>
-        <p class="card-text">Удалённая настройка и оптимизация майнинг-пулов. Подбор наиболее выгодных комбинаций под ваше оборудование.</p>
+        <h3 class="card-title">Мониторинг 24/7</h3>
+        <p class="card-text">SCADA-система. Контроль каждого устройства. Оповещения об отклонениях. Личный кабинет с полной аналитикой.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 class="card-title">Несколько площадок</h3>
+        <p class="card-text">Географическое распределение. Выбор локации под вашу задачу. Снижение рисков через диверсификацию.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3 class="card-title">Любой пул</h3>
+        <p class="card-text">Подключение к любому пулу без ограничений. Первичная настройка «под ключ». Помощь с оптимизацией.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEES -->
+<section class="section section-dark" id="guarantees">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Гарантии</span>
+      <h2 class="section-title">Мы отвечаем за результат</h2>
+      <p class="section-subtitle">Прозрачные условия, закреплённые в договоре.</p>
+    </div>
+    <div class="guarantee-grid">
+      <div class="guarantee-card reveal">
+        <div class="guarantee-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="guarantee-title">Гарантия аптайма</div>
+        <div class="guarantee-text">Аптайм не ниже 97% в круглосуточном режиме. Зафиксировано в SLA-договоре.</div>
+      </div>
+      <div class="guarantee-card reveal">
+        <div class="guarantee-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="guarantee-title">Ремонт за 48 часов</div>
+        <div class="guarantee-text">Среднее время ремонта — 48 часов. Более 80% запчастей в наличии на складе.</div>
+      </div>
+      <div class="guarantee-card reveal">
+        <div class="guarantee-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div class="guarantee-title">Страхование</div>
+        <div class="guarantee-text">Оборудование застраховано. Полная компенсация в случае утраты или повреждения.</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="section section-deep tac">
+<section class="cta-section">
   <div class="container">
     <span class="section-label">Начните зарабатывать</span>
     <h2 class="section-title" style="max-width:600px;margin:0 auto var(--space-lg)">Готовы разместить оборудование?</h2>
-    <p class="section-subtitle" style="margin:0 auto var(--space-xl)">Оставьте заявку — перезвоним в течение часа.</p>
+    <p class="section-subtitle" style="margin:0 auto var(--space-xl)">Оставьте заявку — перезвоним в течение часа и рассчитаем ваш доход.</p>
     <a href="contacts.html" class="btn btn-green btn-lg">Оставить заявку</a>
   </div>
 </section>
@@ -166,13 +183,13 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand">Новый Хостинг</div>
-        <p class="footer-desc">Профессиональный хостинг ASIC-оборудования в России. Собственные площадки, низкие тарифы, полное сопровождение.</p>
+        <p class="footer-desc">Промышленный хостинг ASIC-оборудования. Два режима, свой сервисный центр, легальная энергия. Снижаем себестоимость майнинга.</p>
       </div>
       <div>
         <div class="footer-h">Услуги</div>
         <div class="footer-l">
+          <a href="services.html">Тарифы</a>
           <a href="services.html">Размещение</a>
-          <a href="services.html">Ремонт</a>
           <a href="equipment.html">Оборудование</a>
           <a href="faq.html">FAQ</a>
         </div>
@@ -182,13 +199,13 @@
         <div class="footer-l">
           <a href="about.html">О нас</a>
           <a href="contacts.html">Контакты</a>
-          <a href="about.html">Партнёрам</a>
+          <a href="about.html">Отзывы</a>
         </div>
       </div>
       <div>
         <div class="footer-h">Контакты</div>
         <div class="footer-l">
-          <a href="contacts.html">Москва, ул. Электрозаводская, 24</a>
+          <a href="contacts.html">Петрозаводск, ул. Онежской Флотилии, 4</a>
           <a href="contacts.html">+7 (495) 000-00-00</a>
           <a href="contacts.html">info@novy-hosting.ru</a>
           <a href="contacts.html">@novy_hosting</a>
@@ -196,8 +213,8 @@
       </div>
     </div>
     <div class="footer-b">
-      <span>&copy; 2026 Новый Хостинг. Все права защищены.</span>
-      <span>Работаем по законодательству РФ</span>
+      <span>© 2026 Новый Хостинг. Все права защищены.</span>
+      <span>Политика конфиденциальности</span>
     </div>
   </div>
 </footer>
